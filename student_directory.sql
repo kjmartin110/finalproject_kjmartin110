@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS student_directory;
+USE student_directory;
+
 -- MariaDB dump 10.20-11.8.9-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: student_directory
@@ -59,3 +62,18 @@ SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
 -- Dump completed on 2026-11-17 18:07:08
+
+
+-- Student Search Stored Procedure
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS search_students$$
+
+CREATE PROCEDURE search_students(IN lName VARCHAR(50))
+BEGIN
+    SELECT * FROM students
+    WHERE last_name LIKE CONCAT(lName, '%');
+END$$
+
+DELIMITER ;

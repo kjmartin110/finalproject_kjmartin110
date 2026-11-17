@@ -42,9 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } catch (mysqli_sql_exception $e) {
             error_log($e->getMessage());
 
-            // TEMPORARY: Show error for debugging
-            $errorMessage = "Database error: " .
-                $e->getMessage();
+            // Log errors without exposing database details
+            $errorMessage = "Database connection or search failed.";
         }
     }
 } else {
