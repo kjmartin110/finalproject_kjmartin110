@@ -1,0 +1,174 @@
+
+/*
+Name: Kevin Martin
+Date: November 17, 2026
+Final Project - Stylesheet
+*/
+
+/* General Page Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #123c69;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Image Gallery - Mobile First */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Search Form */
+.search-section {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #123c69;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0b294b;
+}
+
+/* Search Results Table */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #aaa;
+    text-align: left;
+}
+
+th {
+    background-color: #123c69;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #eef2f7;
+}
+
+/* Links */
+a {
+    color: #123c69;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0b294b;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #b45309;
+    outline-offset: 3px;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .gallery {
+        flex-direction: row;
+    }
+
+    .gallery figure {
+        flex: 1;
+        min-width: 0;
+    }
+}
